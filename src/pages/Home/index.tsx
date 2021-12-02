@@ -6,6 +6,7 @@ import ItemCard from "../../components/ItemCard";
 import HorizontalDotsIcon from "../../assets/icons/HorizontalDotsIcon";
 import KeyIcon from "../../assets/icons/KeyIcon";
 import Modal from "../../components/Modal";
+import useClickOutside from "../../hooks/useOutsideClick";
 
 const items = [
   { name: "Hotels", Icon: "icon" },
@@ -18,10 +19,14 @@ const items = [
 
 const Home = () => {
   const [modalOpen, setModalOpen] = React.useState(false);
-  const myRef = React.useRef<HTMLDivElement>()
+  const myRef = React.useRef<HTMLDivElement>(null);
+
+  useClickOutside(myRef, () => {
+    setModalOpen(false);
+  });
   return (
     <>
-      {modalOpen ? <Modal divRef={myRef}>I am modaling</Modal> : ""}
+      {modalOpen ? <Modal ref={myRef}>I am modaling</Modal> : ""}
       <div className="grid grid-cols-6 gap-2">
         {items.map(({ name, Icon }) => (
           <Link to="/" key="name">
