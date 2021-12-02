@@ -1,9 +1,11 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 import MessageIcon from "../../assets/icons/MessageIcon";
 import ItemCard from "../../components/ItemCard";
 import HorizontalDotsIcon from "../../assets/icons/HorizontalDotsIcon";
 import KeyIcon from "../../assets/icons/KeyIcon";
+import Modal from "../../components/Modal";
 
 const items = [
   { name: "Hotels", Icon: "icon" },
@@ -15,16 +17,21 @@ const items = [
 ];
 
 const Home = () => {
+  const [modalOpen, setModalOpen] = React.useState(false);
+  const myRef = React.useRef<HTMLDivElement>()
   return (
-    <div className="grid grid-cols-6 gap-2">
-      {items.map(({ name, Icon }) => (
-        <Link to="/" key="name">
-          <ItemCard>
-            {name} <Icon />
-          </ItemCard>
-        </Link>
-      ))}
-    </div>
+    <>
+      {modalOpen ? <Modal divRef={myRef}>I am modaling</Modal> : ""}
+      <div className="grid grid-cols-6 gap-2">
+        {items.map(({ name, Icon }) => (
+          <Link to="/" key="name">
+            <ItemCard setModalOpen={setModalOpen}>
+              {name} <Icon />
+            </ItemCard>
+          </Link>
+        ))}
+      </div>
+    </>
   );
 };
 
