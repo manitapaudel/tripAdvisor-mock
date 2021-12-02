@@ -6,7 +6,7 @@ import HeartIcon from "../../assets/icons/HeartIcon";
 import PencilIcon from "../../assets/icons/PencilIcon";
 import PrimaryButton from "../Button/PrimaryButton";
 
-type NavbarProps = {}
+type NavbarProps = {};
 
 const navItems = [
   {
@@ -20,13 +20,15 @@ const navItems = [
 
 const Navbar: React.FC<NavbarProps> = () => {
   return (
-    <div className="container flex items-center justify-between mx-auto p-2 shadow-md">
-      <img
-        src="/images/trip-advisor-logo.svg"
-        alt="Trip advisor logo"
-        width="200px"
-        height="200px"
-      />
+    <div className="container flex items-center justify-between mx-auto p-3 shadow-md">
+      <Link to="/">
+        <img
+          src="/images/trip-advisor-logo.svg"
+          alt="Trip advisor logo"
+          width="200px"
+          height="200px"
+        />
+      </Link>
       <div className="grid grid-cols-4 gap-6">
         {navItems.map(({ name, href, Icon }) => (
           <Link

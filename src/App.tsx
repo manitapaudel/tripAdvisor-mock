@@ -5,8 +5,10 @@ import Navbar from "./components/Navbar";
 import Reviews from "./pages/Reviews";
 import Trips from "./pages/Trips";
 import Alerts from "./pages/Alerts";
+import Home from "./pages/Home";
 
 const routes = [
+  { path: "/", Page: Home },
   { path: "/reviews", Page: Reviews },
   { path: "/trips", Page: Trips },
   { path: "/alerts", Page: Alerts },

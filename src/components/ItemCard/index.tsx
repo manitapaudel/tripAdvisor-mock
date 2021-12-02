@@ -6,7 +6,11 @@ type CardProps = {
 };
 const ItemCard: React.FC<CardProps> = ({ className = "", children }) => {
   return (
-    <div className={`grid grid-cols-2 gap-4 ${className}`}>{children}</div>
+    <div
+      className={`flex items-start justify-between border border-gray-900 rounded-md p-3 font-medium hover:bg-gray-900 hover:text-gray-50 min-h-card ${className}`}
+    >
+      {children}
+    </div>
   );
 };
 
