@@ -2,7 +2,12 @@ import React from "react";
 
 type CardProps = {
   className?: string;
-  children: React.ReactNode;
+  children:
+    | JSX.Element
+    | JSX.Element[]
+    | string
+    | string[]
+    | (string | JSX.Element)[];
   setModalOpen(a: boolean): void;
 };
 const ItemCard: React.FC<CardProps> = ({

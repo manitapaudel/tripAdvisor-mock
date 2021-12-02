@@ -3,7 +3,7 @@ import React from "react";
 type Ref = HTMLDivElement | null;
 
 type ModalProps = {
-  children: React.ReactNode;
+  children: JSX.Element | string;
 };
 
 const Modal = React.forwardRef<Ref, ModalProps>(({ children }, ref) => {
