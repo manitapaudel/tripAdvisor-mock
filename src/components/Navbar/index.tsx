@@ -6,7 +6,7 @@ import HeartIcon from "../../assets/icons/HeartIcon";
 import PencilIcon from "../../assets/icons/PencilIcon";
 import PrimaryButton from "../Button/PrimaryButton";
 
-interface NavbarProps {}
+type NavbarProps = {}
 
 const navItems = [
   {
@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <Link
             key={name}
             to={href}
-            className="flex items-center font-bold font-mono p-1.5 rounded-full hover:bg-gray-200"
+            className="flex items-center font-bold font-mono text-lg p-1.5 rounded-full hover:bg-gray-200"
           >
             <Icon className="mr-1" />
             {name}

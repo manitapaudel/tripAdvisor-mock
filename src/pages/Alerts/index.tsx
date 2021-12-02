@@ -1,5 +1,5 @@
 import React from "react";
-interface AlertsProps {}
+type AlertsProps = {}
 
 const Alerts: React.FC<AlertsProps> = () => {
   return <div className="bg-red-200">Alerts</div>;

@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <main className="container mx-auto">
+      <main className="container mx-auto mt-2">
         <Routes>
           {routes.map(({ path, Page }) => (
             <Route key={path} path={path} element={<Page />} />

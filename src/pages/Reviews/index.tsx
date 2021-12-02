@@ -1,5 +1,5 @@
 import React from "react";
-interface ReviewsProps {}
+type ReviewsProps = {}
 
 const Reviews: React.FC<ReviewsProps> = () => {
   return <div>Reviews</div>;
