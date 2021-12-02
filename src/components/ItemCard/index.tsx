@@ -17,7 +17,7 @@ const ItemCard: React.FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={`flex items-start justify-between border border-gray-900 rounded-md p-3 font-medium hover:bg-gray-900 hover:text-gray-50 min-h-card ${className}`}
+      className={`flex items-start justify-between border border-gray-900 rounded-2xl p-3 font-medium hover:bg-gray-900 hover:text-gray-50 min-h-card ${className}`}
       onClick={() => setModalOpen(true)}
     >
       {children}

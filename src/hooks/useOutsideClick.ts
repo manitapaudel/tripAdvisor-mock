@@ -7,8 +7,8 @@ function useClickOutside(ref: RefObject<HTMLDivElement>, onClickOutside: () => v
     /**
      * Invoke Function onClick outside of element
      */
-    function handleClickOutside(event: any) {
-      if (ref.current && !ref.current.contains(event.target)) {
+    function handleClickOutside(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as HTMLDivElement)) {
         onClickOutside();
       }
     }

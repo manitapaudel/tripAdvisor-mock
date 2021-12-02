@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       minHeight: {
-        card: "80px",
+        card: "50px",
       },
     },
   },
