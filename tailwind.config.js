@@ -6,6 +6,9 @@ module.exports = {
       minHeight: {
         card: "50px",
       },
+      // backgroundImage: {
+      //   "search-bg": "url('/images/search-bg.png')",
+      // },
     },
   },
   variants: {

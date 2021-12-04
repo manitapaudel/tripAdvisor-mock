@@ -16,10 +16,10 @@ const routes = [
 
 function App() {
   return (
-    <div className="container mx-auto bg-red-100">
+    <div className="container mx-auto">
       <Navbar />
       {/* <div className="bg-gray-400 h-100"> */}
-      <main className="mt-2">
+      <main className="mt-4">
         <Routes>
           {routes.map(({ path, Page }) => (
             <Route key={path} path={path} element={<Page />} />
