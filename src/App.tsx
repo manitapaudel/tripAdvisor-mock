@@ -16,15 +16,17 @@ const routes = [
 
 function App() {
   return (
-    <div className="App">
+    <div className="container mx-auto bg-red-100">
       <Navbar />
-      <main className="container mx-auto mt-2">
+      {/* <div className="bg-gray-400 h-100"> */}
+      <main className="mt-2">
         <Routes>
           {routes.map(({ path, Page }) => (
             <Route key={path} path={path} element={<Page />} />
           ))}
         </Routes>
       </main>
+      {/* </div> */}
     </div>
   );
 }

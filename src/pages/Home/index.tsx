@@ -1,18 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import useClickOutside from "../../hooks/useOutsideClick";
 import MessageIcon from "../../assets/icons/MessageIcon";
-import ItemCard from "../../components/ItemCard";
 import HorizontalDotsIcon from "../../assets/icons/HorizontalDotsIcon";
 import KeyIcon from "../../assets/icons/KeyIcon";
+import SunIcon from "../../assets/icons/SunIcon";
+import ItemCard from "../../components/ItemCard";
 import Modal from "../../components/Modal";
-import useClickOutside from "../../hooks/useOutsideClick";
+import BuildingIcon from "../../assets/icons/BuildingIcon";
+import CakeIcon from "../../assets/icons/CakeIcon";
 
 const items = [
-  { name: "Hotels", Icon: "icon" },
+  { name: "Hotels", Icon: BuildingIcon},
   { name: "Vacation Rentals", Icon: KeyIcon },
-  { name: "Things to do", Icon: "icon2" },
-  { name: "Restaurants", Icon: "icon2" },
+  { name: "Things to do", Icon: SunIcon },
+  { name: "Restaurants", Icon: CakeIcon },
   { name: "Travel Forums", Icon: MessageIcon },
   { name: "More", Icon: HorizontalDotsIcon },
 ];
