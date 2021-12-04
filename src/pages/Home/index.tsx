@@ -11,6 +11,7 @@ import CakeIcon from "../../assets/icons/CakeIcon";
 import ItemCard from "../../components/ItemCard";
 import Modal from "../../components/Modal";
 import Searchbar from "../../components/Searchbar";
+import MoreToExplore from "../../components/MoreToExplore";
 
 const items = [
   { name: "Hotels", Icon: BuildingIcon},
@@ -40,10 +41,11 @@ const Home = () => {
           </Link>
         ))}
       </div>
-      <div className="relative bg-search-bg w-full h-32 container mt-3">
-          <img src="/images/search_bg.png" alt="graphics" className="mr-0 w-full"/>
+      <div className="relative bg-search-bg w-full h-auto container mt-3">
+          <img src="/images/search_bg.png" alt="graphics" className="mr-0 w-full h-full"/>
           <Searchbar className="absolute top-0 transform translate-x-44 translate-y-44" />
       </div>
+      <MoreToExplore className="mt-4"/>
     </>
   );
 };
