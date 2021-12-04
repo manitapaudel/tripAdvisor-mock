@@ -4,8 +4,11 @@ module.exports = {
   theme: {
     extend: {
       minHeight: {
-        card: "80px",
+        card: "50px",
       },
+      // backgroundImage: {
+      //   "search-bg": "url('/images/search-bg.png')",
+      // },
     },
   },
   variants: {
