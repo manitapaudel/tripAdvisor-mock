@@ -20,7 +20,7 @@ const navItems = [
 
 const Navbar: React.FC<NavbarProps> = () => {
   return (
-    <div className="flex items-center justify-between sticky top-0 bg-white mx-auto p-3 shadow-md">
+    <div className="flex items-center justify-between sticky top-0 bg-white mx-auto p-3 shadow-md z-20">
       <Link to="/">
         <img
           src="/images/trip-advisor-logo.svg"
