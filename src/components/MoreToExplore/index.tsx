@@ -31,7 +31,7 @@ const MoreToExplore: React.FC<MoreToExploreProps> = ({ className = "" }) => {
   return (
     <div className={`bg-pink-100 p-4 rounded-md h-auto w-full ${className}`}>
       <H3>More to Explore</H3>
-      <div className="mt-2 grid grid-cols-3 gap-3">
+      <div className="container mx-auto mt-2 grid grid-cols-3 gap-3">
       {explores.map(({title, href, imgSrc, alt}) => (
         <ExploreCard key={imgSrc} title={title} href={href} imgSrc={imgSrc} alt={alt}/>
       ))}

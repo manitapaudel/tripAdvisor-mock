@@ -14,7 +14,7 @@ import Searchbar from "../../components/Searchbar";
 import MoreToExplore from "../../components/MoreToExplore";
 
 const items = [
-  { name: "Hotels", Icon: BuildingIcon},
+  { name: "Hotels", Icon: BuildingIcon },
   { name: "Vacation Rentals", Icon: KeyIcon },
   { name: "Things to do", Icon: SunIcon },
   { name: "Restaurants", Icon: CakeIcon },
@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <>
       {modalOpen ? <Modal ref={myRef}>I am modaling</Modal> : ""}
-      <div className="grid grid-cols-6 gap-2">
+      <div className="container mx-auto grid grid-cols-6 gap-2">
         {items.map(({ name, Icon }) => (
           <Link to="/" key="name">
             <ItemCard setModalOpen={setModalOpen}>
@@ -41,11 +41,15 @@ const Home = () => {
           </Link>
         ))}
       </div>
-      <div className="relative bg-search-bg w-full h-auto container mt-3">
-          <img src="/images/search_bg.png" alt="graphics" className="mr-0 w-full h-full"/>
-          <Searchbar className="absolute top-0 transform translate-x-44 translate-y-44" />
+      <div className="relative bg-search-bg w-full h-auto container mx-auto mt-3">
+        <img
+          src="/images/search_bg.png"
+          alt="graphics"
+          className="mr-0 w-full h-full"
+        />
+        <Searchbar className="absolute top-0 transform translate-x-44 translate-y-44" />
       </div>
-      <MoreToExplore className="mt-4"/>
+      <MoreToExplore className="mt-4" />
     </>
   );
 };

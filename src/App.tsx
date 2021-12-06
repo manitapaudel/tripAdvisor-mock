@@ -16,7 +16,7 @@ const routes = [
 
 function App() {
   return (
-    <div className="container mx-auto">
+    <div>
       <Navbar />
       {/* <div className="bg-gray-400 h-100"> */}
       <main className="mt-4">

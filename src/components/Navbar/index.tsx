@@ -20,7 +20,8 @@ const navItems = [
 
 const Navbar: React.FC<NavbarProps> = () => {
   return (
-    <div className="flex items-center justify-between sticky top-0 bg-white mx-auto p-3 shadow-md z-20">
+    <div className="sticky top-0 bg-white mx-auto p-3 shadow-md z-20">
+      <div className="container mx-auto flex items-center justify-between">
       <Link to="/">
         <img
           src="/images/trip-advisor-logo.svg"
@@ -43,6 +44,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         <PrimaryButton className="bg-gray-900 hover:bg-gray-800 text-gray-50 font-medium px-3 py-2 rounded-full">
           Sign In
         </PrimaryButton>
+      </div>
       </div>
     </div>
   );
