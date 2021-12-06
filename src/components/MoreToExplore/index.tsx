@@ -1,6 +1,5 @@
 import React from "react";
 
-import axios from "../../utils/axios";
 import ExploreCard from "../ExploreCard";
 import { H3 } from "../Typography";
 
@@ -31,21 +30,7 @@ const explores = [
 ];
 
 const MoreToExplore: React.FC<MoreToExploreProps> = ({ className = "" }) => {
-  const [data, setData] = React.useState([]);
-  React.useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const resp: any = await axios.get("/posts");
-        // console.log("Data", resp.data);
-        setData(resp.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchUsers();
-  }, []);
-
-  console.log("Data", data);
+ 
   return (
     <div className={`bg-pink-100 p-4 rounded-md h-auto w-full ${className}`}>
       <H3>More to Explore</H3>

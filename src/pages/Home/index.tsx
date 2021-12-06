@@ -12,6 +12,7 @@ import ItemCard from "../../components/ItemCard";
 import Modal from "../../components/Modal";
 import Searchbar from "../../components/Searchbar";
 import MoreToExplore from "../../components/MoreToExplore";
+import Testimonials from "../../components/Testimonials";
 
 const items = [
   { name: "Hotels", Icon: BuildingIcon },
@@ -34,7 +35,7 @@ const Home = () => {
       {modalOpen ? <Modal ref={myRef}>I am modaling</Modal> : ""}
       <div className="container mx-auto grid grid-cols-6 gap-2">
         {items.map(({ name, Icon }) => (
-          <Link to="/" key="name">
+          <Link to="/" key={name}>
             <ItemCard setModalOpen={setModalOpen}>
               {name} <Icon />
             </ItemCard>
@@ -50,6 +51,7 @@ const Home = () => {
         <Searchbar className="absolute top-0 transform translate-x-44 translate-y-44" />
       </div>
       <MoreToExplore className="mt-4" />
+      <Testimonials className="mt-4" />
     </>
   );
 };
