@@ -32,7 +32,13 @@ const Home = () => {
   });
   return (
     <>
-      {modalOpen ? <Modal ref={myRef}>I am modaling</Modal> : ""}
+      {modalOpen ? (
+        <Modal ref={myRef} setShowModal={setModalOpen}>
+          I am modaling
+        </Modal>
+      ) : (
+        ""
+      )}
       <div className="container mx-auto grid grid-cols-6 gap-2">
         {items.map(({ name, Icon }) => (
           <Link to="/" key={name}>

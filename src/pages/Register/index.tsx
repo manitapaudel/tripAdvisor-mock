@@ -21,7 +21,7 @@ const Register = () => {
   };
   console.log({ formValues });
   return (
-    <div className="w-1/3 mx-auto shadow-md rounded-md p-3 h-100 overflow-y-auto">
+    <>
       <span>
         <img
           src="/images/trip-advisor-owl.svg"
@@ -66,7 +66,7 @@ const Register = () => {
           Submit
         </button>
       </form>
-    </div>
+    </>
   );
 };
 

@@ -1,22 +1,37 @@
 import React from "react";
+import XCircleIcon from "../../assets/icons/XCircleIcon";
 
 type Ref = HTMLDivElement | null;
 
 type ModalProps = {
   children: JSX.Element | string;
+  dark?: boolean;
+  setShowModal(a: boolean): void;
 };
 
-const Modal = React.forwardRef<Ref, ModalProps>(({ children }, ref) => {
-  return (
-    <div className="absolute top-0 right-0 w-full h-full bg-gray-50 bg-opacity-75">
+const Modal = React.forwardRef<Ref, ModalProps>(
+  ({ children, setShowModal, dark = false }, ref) => {
+    return (
       <div
-        className="bg-white border border-gray-300 w-1/3 mx-auto rounded-md p-2 my-40 min-h-card"
-        ref={ref}
+        className={`fixed top-0 right-0 w-full h-screen ${
+          dark ? "bg-gray-400" : "bg-gray-50"
+        } bg-opacity-75 z-50`}
       >
-        {children}
+        <div
+          className="relative bg-white border border-gray-300 w-1/3 mx-auto rounded-md shadow-md  p-4 my-40 min-h-card overflow-y-auto"
+          ref={ref}
+        >
+          <button
+            className="absolute right-0 top-0 hover:text-red-500"
+            onClick={() => setShowModal(false)}
+          >
+            <XCircleIcon />
+          </button>
+          {children}
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
 export default Modal;

@@ -5,7 +5,10 @@ import BellIcon from "../../assets/icons/BellIcon";
 import HeartIcon from "../../assets/icons/HeartIcon";
 import PencilIcon from "../../assets/icons/PencilIcon";
 
-type NavbarProps = {};
+type NavbarProps = {
+  showModal: boolean;
+  setShowModal(a: boolean): void;
+};
 
 const navItems = [
   {
@@ -17,7 +20,7 @@ const navItems = [
   { name: "Alerts", href: "/alerts", Icon: BellIcon },
 ];
 
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC<NavbarProps> = ({ showModal, setShowModal }) => {
   return (
     <div className="sticky top-0 bg-white mx-auto p-3 shadow-md z-20">
       <div className="container mx-auto flex items-center justify-between">
@@ -40,12 +43,12 @@ const Navbar: React.FC<NavbarProps> = () => {
               {name}
             </Link>
           ))}
-          <Link
-            to="/register"
+          <button
+            onClick={() => setShowModal(true)}
             className="bg-gray-900 hover:bg-gray-800 text-gray-50 font-medium px-3 py-2 rounded-full text-center"
           >
             Sign In
-          </Link>
+          </button>
         </div>
       </div>
     </div>
