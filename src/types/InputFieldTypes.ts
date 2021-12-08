@@ -5,5 +5,7 @@ export type InputFieldProps = {
   value: string;
   placeholder: string;
   type?: "text" | "password" | "email" | "checkbox";
+  showPassword?: boolean;
+  setShowPassword?(a: boolean): void;
   onChange(event: React.ChangeEvent<HTMLInputElement>): void;
 };
