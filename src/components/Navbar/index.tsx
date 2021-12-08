@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import BellIcon from "../../assets/icons/BellIcon";
 import HeartIcon from "../../assets/icons/HeartIcon";
 import PencilIcon from "../../assets/icons/PencilIcon";
-import PrimaryButton from "../Button/PrimaryButton";
 
 type NavbarProps = {};
 
@@ -22,29 +21,32 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <div className="sticky top-0 bg-white mx-auto p-3 shadow-md z-20">
       <div className="container mx-auto flex items-center justify-between">
-      <Link to="/">
-        <img
-          src="/images/trip-advisor-logo.svg"
-          alt="Trip advisor logo"
-          width="200px"
-          height="200px"
-        />
-      </Link>
-      <div className="grid grid-cols-4 gap-6">
-        {navItems.map(({ name, href, Icon }) => (
+        <Link to="/">
+          <img
+            src="/images/trip-advisor-logo.svg"
+            alt="Trip advisor logo"
+            width="200px"
+            height="200px"
+          />
+        </Link>
+        <div className="grid grid-cols-4 gap-6">
+          {navItems.map(({ name, href, Icon }) => (
+            <Link
+              key={name}
+              to={href}
+              className="flex items-center font-bold font-mono text-lg p-1.5 rounded-full hover:bg-gray-200"
+            >
+              <Icon className="mr-1" />
+              {name}
+            </Link>
+          ))}
           <Link
-            key={name}
-            to={href}
-            className="flex items-center font-bold font-mono text-lg p-1.5 rounded-full hover:bg-gray-200"
+            to="/register"
+            className="bg-gray-900 hover:bg-gray-800 text-gray-50 font-medium px-3 py-2 rounded-full text-center"
           >
-            <Icon className="mr-1" />
-            {name}
+            Sign In
           </Link>
-        ))}
-        <PrimaryButton className="bg-gray-900 hover:bg-gray-800 text-gray-50 font-medium px-3 py-2 rounded-full">
-          Sign In
-        </PrimaryButton>
-      </div>
+        </div>
       </div>
     </div>
   );

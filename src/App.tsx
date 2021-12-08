@@ -6,12 +6,14 @@ import Reviews from "./pages/Reviews";
 import Trips from "./pages/Trips";
 import Alerts from "./pages/Alerts";
 import Home from "./pages/Home";
+import Register from "./pages/Register";
 
 const routes = [
   { path: "/", Page: Home },
   { path: "/reviews", Page: Reviews },
   { path: "/trips", Page: Trips },
   { path: "/alerts", Page: Alerts },
+  { path: "/register", Page: Register },
 ];
 
 function App() {
