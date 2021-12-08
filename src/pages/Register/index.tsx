@@ -4,17 +4,22 @@ import InputField from "../../components/InputField";
 import { H2 } from "../../components/Typography";
 
 const Register = () => {
-  const [username, setUsername] = React.useState<string>("");
+  const [formValues, setFormValues] = React.useState({
+    username: "",
+    email: "",
+    password: "",
+  });
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log("username is done saving:", username );
+    console.log("username is done saving:", formValues);
   };
 
   const handleChange = (e: any) => {
-    setUsername(e.target.value);
+    // setFormValues(username: e.target.value);
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
-  console.log({ username });
+  console.log({ formValues });
   return (
     <div className="w-1/3 mx-auto shadow-md rounded-md p-3 h-100 overflow-y-auto">
       <span>
@@ -29,24 +34,37 @@ const Register = () => {
         </H2>
       </span>
       <form className="mt-2" onSubmit={handleSubmit}>
-        {/* <label htmlFor="username" className="font-medium">
-          Username
-        </label>
-        <br />
-        <input
-          name="username"
-          id="username"
-          placeholder="Enter username"
-          className="mt-1.5 p-3 border border-gray-200 rounded-md focus:outline-none focus:ring focus:ring-blue-300 w-full"
-        /> */}
         <InputField
           id="username"
-          value={username}
+          value={formValues.username}
           placeholder="Enter username"
           onChange={handleChange}
         >
           Username
         </InputField>
+        <InputField
+          id="email"
+          value={formValues.email}
+          placeholder="Enter Email"
+          onChange={handleChange}
+        >
+          Email
+        </InputField>
+        <InputField
+          id="password"
+          value={formValues.password}
+          placeholder="Enter Password"
+          type="password"
+          onChange={handleChange}
+        >
+          Password
+        </InputField>
+        <button
+          type="submit"
+          className="uppercase w-full px-5 py-3 bg-green-600 hover:bg-green-800 text-white font-medium rounded-md tracking-widest mt-3"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );

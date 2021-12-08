@@ -4,5 +4,6 @@ export type InputFieldProps = {
   id: string;
   value: string;
   placeholder: string;
+  type?: "text" | "password" | "email" | "checkbox";
   onChange(event: React.ChangeEvent<HTMLInputElement>): void;
 };
