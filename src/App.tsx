@@ -11,6 +11,7 @@ import Alerts from "./pages/Alerts";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Modal from "./components/Modal";
+import AuthProvider from "./Providers/AuthProvider";
 
 const routes = [
   { path: "/", Page: Home },
@@ -22,11 +23,11 @@ const routes = [
 
 function App() {
   const modalRef = React.useRef<HTMLDivElement>(null);
-  const [showModal, setShowModal] = React.useState(true);
+  const [showModal, setShowModal] = React.useState(false);
 
   useClickOutside(modalRef, () => setShowModal(false));
   return (
-    <div>
+    <AuthProvider>
       {showModal ? (
         <Modal ref={modalRef} setShowModal={setShowModal} dark>
           <Register />
@@ -44,7 +45,7 @@ function App() {
         </Routes>
       </main>
       {/* </div> */}
-    </div>
+    </AuthProvider>
   );
 }
 

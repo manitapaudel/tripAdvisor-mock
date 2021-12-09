@@ -17,9 +17,14 @@ const Register = () => {
 
   const handleChange = (e: any) => {
     // setFormValues(username: e.target.value);
-    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormValues((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
-  console.log({ formValues });
+  // console.log({ formValues });
+  
   return (
     <>
       <span>

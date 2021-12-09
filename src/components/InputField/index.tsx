@@ -4,7 +4,8 @@ import EyeIcon from "../../assets/icons/EyeIcon";
 import EyeOffIcon from "../../assets/icons/EyeOffIcon";
 import { InputFieldProps } from "../../types/InputFieldTypes";
 
-const InputField: React.FC<InputFieldProps> = ({
+const InputField: React.FC<InputFieldProps> = (
+  {
   className = "",
   children,
   value,
@@ -12,7 +13,9 @@ const InputField: React.FC<InputFieldProps> = ({
   type = "text",
   placeholder,
   onChange,
-}) => {
+  ...rest
+}
+) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   return (
@@ -29,6 +32,7 @@ const InputField: React.FC<InputFieldProps> = ({
         placeholder={placeholder}
         onChange={onChange}
         className={`mt-1.5 p-3 border border-gray-200 rounded-md focus:outline-none focus:ring focus:ring-blue-300 w-full ${className}`}
+        {...rest}
       />
       {type === "password" && showPassword ? (
         <button onClick={() => setShowPassword(!showPassword)}>

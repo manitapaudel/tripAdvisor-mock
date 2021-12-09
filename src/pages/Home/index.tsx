@@ -13,6 +13,7 @@ import Modal from "../../components/Modal";
 import Searchbar from "../../components/Searchbar";
 import MoreToExplore from "../../components/MoreToExplore";
 import Testimonials from "../../components/Testimonials";
+import { UserContext } from "../../Providers/AuthProvider";
 
 const items = [
   { name: "Hotels", Icon: BuildingIcon },
@@ -27,6 +28,8 @@ const Home = () => {
   const [modalOpen, setModalOpen] = React.useState(false);
   const myRef = React.useRef<HTMLDivElement>(null);
 
+  const value = React.useContext(UserContext)
+  console.log({value})
   useClickOutside(myRef, () => {
     setModalOpen(false);
   });

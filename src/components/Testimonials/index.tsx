@@ -11,6 +11,9 @@ type TestimonialProps = {
 
 const Testimonials: React.FC<TestimonialProps> = ({ className = "" }) => {
   const [data, setData] = React.useState([]);
+  const [current, setCurrent] = React.useState(2);
+  const [prev, setPrev] = React.useState<string>("");
+
   React.useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -26,16 +29,37 @@ const Testimonials: React.FC<TestimonialProps> = ({ className = "" }) => {
 
   console.log("Data", data);
 
+  const length = data.length;
+
+  if (!Array.isArray(data) || length <= 0) {
+    return null;
+  }
+
+  const prevSlide = () => {
+    setCurrent(current === 2 ? length - 1 : current - 1);
+    setPrev("prev");
+  };
+
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 2 : current + 1);
+    setPrev("next");
+  };
+
+  console.log(current);
+
   return (
     <div className={` p-3 ${className}`}>
-        <H3>Testimonials</H3>
-      <div className="container mx-auto flex items-center justify-between">
-        <button className="absolute left-0 hover:text-green-500">
+      <H3>Testimonials</H3>
+      <div className="container mx-auto flex items-center justify-center">
+        <button
+          className="absolute left-0 hover:text-green-500"
+          onClick={prevSlide}
+        >
           <ArrowCircleLeftIcon />
         </button>
-        <section className="relative grid grid-cols-4 gap-5 mt-2 overflow-hidden">
-          {data.map(({ title, url, body }) => (
-            <section className="p-3 rounded-md shadow-md">
+        <section className="relative grid grid-cols-3 gap-5 mt-2 overflow-hidden">
+          {data.slice(current - 2, current + 1).map(({ title, url, body }) => (
+            <section className="bg-pink-50 p-3 rounded-md shadow-md">
               <img src={url} height="200px" width="auto" alt="images" />
               <span className="pl-3 font-serif">
                 <DoubleQuotesIcon />
@@ -44,7 +68,10 @@ const Testimonials: React.FC<TestimonialProps> = ({ className = "" }) => {
             </section>
           ))}
         </section>
-        <button className="absolute right-0 hover:text-green-500">
+        <button
+          className="absolute right-0 hover:text-green-500"
+          onClick={nextSlide}
+        >
           <ArrowCircleRightIcon />
         </button>
       </div>
