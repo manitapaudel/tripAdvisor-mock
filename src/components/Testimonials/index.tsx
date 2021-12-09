@@ -1,4 +1,6 @@
 import React from "react";
+import ArrowCircleLeftIcon from "../../assets/icons/ArrowCircleLeftIcon";
+import ArrowCircleRightIcon from "../../assets/icons/ArrowCircleRightIcon";
 import DoubleQuotesIcon from "../../assets/icons/DoubleQuotesIcon";
 import axios from "../../utils/axios";
 import { H3 } from "../Typography";
@@ -25,12 +27,15 @@ const Testimonials: React.FC<TestimonialProps> = ({ className = "" }) => {
   console.log("Data", data);
 
   return (
-    <div className={`bg-green-100 p-3 ${className}`}>
-      <div className="container mx-auto">
+    <div className={` p-3 ${className}`}>
         <H3>Testimonials</H3>
-        <section className="grid grid-cols-4 gap-5 mt-2">
+      <div className="container mx-auto flex items-center justify-between">
+        <button className="absolute left-0 hover:text-green-500">
+          <ArrowCircleLeftIcon />
+        </button>
+        <section className="relative grid grid-cols-4 gap-5 mt-2 overflow-hidden">
           {data.map(({ title, url, body }) => (
-            <section className="bg-white p-3 rounded-md">
+            <section className="p-3 rounded-md shadow-md">
               <img src={url} height="200px" width="auto" alt="images" />
               <span className="pl-3 font-serif">
                 <DoubleQuotesIcon />
@@ -39,6 +44,9 @@ const Testimonials: React.FC<TestimonialProps> = ({ className = "" }) => {
             </section>
           ))}
         </section>
+        <button className="absolute right-0 hover:text-green-500">
+          <ArrowCircleRightIcon />
+        </button>
       </div>
     </div>
   );
