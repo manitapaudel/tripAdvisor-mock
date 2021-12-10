@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import useClickOutside from "../../hooks/useOutsideClick";
 import MessageIcon from "../../assets/icons/MessageIcon";
@@ -25,11 +26,13 @@ const items = [
 ];
 
 const Home = () => {
+  const user = useSelector((state: any) => state.user.value);
+  console.log({ user });
   const [modalOpen, setModalOpen] = React.useState(false);
   const myRef = React.useRef<HTMLDivElement>(null);
 
-  const value = React.useContext(UserContext)
-  console.log({value})
+  const value = React.useContext(UserContext);
+  console.log({ value });
   useClickOutside(myRef, () => {
     setModalOpen(false);
   });

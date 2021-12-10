@@ -2,8 +2,6 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import useClickOutside from "./hooks/useOutsideClick";
-
-import "./App.css";
 import Navbar from "./components/Navbar";
 import Reviews from "./pages/Reviews";
 import Trips from "./pages/Trips";
@@ -12,6 +10,7 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Modal from "./components/Modal";
 import AuthProvider from "./Providers/AuthProvider";
+import "./App.css";
 
 const routes = [
   { path: "/", Page: Home },
@@ -26,6 +25,7 @@ function App() {
   const [showModal, setShowModal] = React.useState(false);
 
   useClickOutside(modalRef, () => setShowModal(false));
+
   return (
     <AuthProvider>
       {showModal ? (

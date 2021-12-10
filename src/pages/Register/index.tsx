@@ -10,12 +10,12 @@ const Register = () => {
     password: "",
   });
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("username is done saving:", formValues);
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // setFormValues(username: e.target.value);
     const { name, value } = e.target;
     setFormValues((prev) => ({

@@ -59,7 +59,7 @@ const Testimonials: React.FC<TestimonialProps> = ({ className = "" }) => {
         </button>
         <section className="relative grid grid-cols-3 gap-5 mt-2 overflow-hidden">
           {data.slice(current - 2, current + 1).map(({ title, url, body }) => (
-            <section className="bg-pink-50 p-3 rounded-md shadow-md">
+            <section className="bg-pink-50 p-3 rounded-md shadow-md" key={url}>
               <img src={url} height="200px" width="auto" alt="images" />
               <span className="pl-3 font-serif">
                 <DoubleQuotesIcon />
