@@ -52,7 +52,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
           </div>
           <div className="flex items-center justify-start gap-4">
             {hashtags.map((tag) => (
-              <Subtitle>
+              <Subtitle key={tag}>
                 <Link to="#" className="hover:underline">
                   #{tag}
                 </Link>

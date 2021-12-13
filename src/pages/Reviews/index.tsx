@@ -28,6 +28,7 @@ const Reviews: React.FC<ReviewsProps> = () => {
           userImg={userImg}
           date={date}
           hashtags={hashtags}
+          key={src}
         />
       ))}
     </div>
